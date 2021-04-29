@@ -3,9 +3,9 @@ import discord
 from discord.ext import commands
 
 import os
-googlekey = os.eviron['SEARCH_KEY']
-cx = os.eviron['CX']
-discordkey = os.eviron['DISCORD_KEY']
+googlekey = os.environ['SEARCH_KEY']
+cx = os.environ['CX']
+discordkey = os.environ['DISCORD_KEY']
 
 client = commands.Bot(command_prefix='.')
 
