@@ -1,1 +1,1 @@
-web: gunicorn great.py
+web: gunicorn great:app
