@@ -17,12 +17,12 @@ import random
 
 @client.command(aliases=['search'])
 async def _search(ctx, *, query):
-        service = build("customsearch", "v1",developerKey='AIzaSyC6CcdMjjHnyMH80RW7PAXTrFOXwyfwFjI')
+        service = build("customsearch", "v1",developerKey=googlekey)
         res = service.cse().list(
                 q=query,
                 filter="1", # filter duplicates
                 start=1,
-                cx='43e2d90ea5d6a1a82',
+                cx=cx,
                 searchType='image'
             ).execute()
         print(res)
@@ -33,4 +33,4 @@ async def _search(ctx, *, query):
         for x in res['items']:
                 await ctx.send(x['link'])
 
-client.run('ODMxNzI0OTE4ODIzMDU5NDU5.YHZaMQ.-qXQ8YZguI63r6FffivtvDbCEIg')
+client.run(discordkey)
